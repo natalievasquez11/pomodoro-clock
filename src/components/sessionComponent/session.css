@@ -1,0 +1,6 @@
+.session-wrapper {
+  border: 5px solid black;
+  width: 50%;
+  margin: auto;
+  border-radius: 40px
+}

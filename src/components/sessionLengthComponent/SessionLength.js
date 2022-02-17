@@ -1,12 +1,15 @@
+import './sessionLength.css';
+
 function SessionLength() {
   return(
-    <div>
+    <div className="length-wrapper">
       <div id="session-label">Session Length</div>
       <button id="session-decrement">session decrement</button>
-      <div id="session-length">25</div>
+      <p id="session-length" className="length">25</p>
       <button id="session-increment">session increment</button>
     </div>
   )
 }
+
 
 export default SessionLength;

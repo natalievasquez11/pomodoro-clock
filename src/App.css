@@ -2,4 +2,15 @@
   text-align: center;
 }
 
+.length {
+  display: inline-block;
+}
+
+button {
+  margin: 15px;
+}
+
+.length-wrapper {
+  display: inline-block;
+}
 

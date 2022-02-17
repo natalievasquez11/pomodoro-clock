@@ -1,9 +1,11 @@
+import './breakLength.css';
+
 function BreakLength() {
   return (
-    <div>
+    <div className="length-wrapper">
       <div id="break-label">Break Length</div>
       <button id="break-decrement">break decrement</button>
-      <div id="break-length">5</div>
+      <p id="break-length" className="length">5</p>
       <button id="break-increment">break increment</button>
     </div>
   )
