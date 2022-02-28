@@ -8,13 +8,15 @@ import React, { useState } from 'react';
 function App() {
   const [sessionLength, setSessionLength] = useState(25);
   const [breakLength, setBreakLength] = useState(5);
-  let minsSecs = { minutes: sessionLength, seconds: 0 };
+  const [[timerMins, timerSecs], setTimer] = useState([sessionLength, 0]);
+  // let minsSecs = { minutes: sessionLength, seconds: 0 };
 
   return (
     <div className="App">
       <BreakLength breakLength={breakLength} setBreakLength={setBreakLength}/>
       <SessionLength sessionLength={sessionLength} setSessionLength={setSessionLength}/>
-      <Session  minsSecs={minsSecs} />
+      <Session timerMins={timerMins} timerSecs={timerSecs} setTimer={setTimer} 
+        sessionLength={sessionLength} breakLength={breakLength}/>
     </div>
   );
 }
