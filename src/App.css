@@ -22,20 +22,6 @@
   margin-top: 15px;
 }
 
-#timer-label {
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-
-#time-left {
-  display: block;
-  margin: 20px;
-  font-size: 3rem;
-  font-weight: 500;
-}
-
 button {
   margin: 15px;
   background-color: black;
@@ -59,19 +45,6 @@ button:active {
 .length-span {
   display: inline-block;
   width: 55px;
-}
-
-#reset, #start_stop {
-  width: 70px;
-  height: 70px;
-}
-
-#start_stop .material-icons {
-  font-size: 27px;
-}
-
-#reset .material-icons{
-  font-size: 38px;
 }
 
 .material-icons {

@@ -35,13 +35,16 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength })
     <div className="session-wrapper">
       <p id="timer-label">Session</p>
       <p id="time-left" className="length">{`${timerMins.toString().padStart(2, '0')}:${timerSecs.toString().padStart(2, '0')}`}</p>
-      <button id="start_stop" onClick={() => setPlayPause(!isPaused)}>
-        <span className="material-icons">play_arrow</span>
-        <span className="material-icons">pause</span>
-      </button>
-      <button id="reset">
-      <span className="material-icons">replay</span>
-      </button>
+      <div>
+        <button id="start_stop" onClick={() => setPlayPause(!isPaused)}>
+          <span className="material-icons">play_arrow</span>
+          <span className="material-icons">pause</span>
+        </button>
+        <button id="reset">
+        <span className="material-icons">replay</span>
+        </button>
+      </div>
+
     </div>
   )
 }
