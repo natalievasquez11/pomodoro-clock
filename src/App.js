@@ -13,8 +13,10 @@ function App() {
 
   return (
     <div className="App">
-      <BreakLength breakLength={breakLength} setBreakLength={setBreakLength}/>
-      <SessionLength sessionLength={sessionLength} setSessionLength={setSessionLength}/>
+      <div className="lengths-div">
+        <BreakLength breakLength={breakLength} setBreakLength={setBreakLength}/>
+        <SessionLength sessionLength={sessionLength} setSessionLength={setSessionLength}/>
+      </div>
       <Session timerMins={timerMins} timerSecs={timerSecs} setTimer={setTimer} 
         sessionLength={sessionLength} breakLength={breakLength}/>
     </div>

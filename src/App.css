@@ -1,14 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+
 .App {
   text-align: center;
-  /* height: 100%; */
+  width: 50%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.9rem;
+}
+
+.lengths-div {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
 }
 
 .length {
   display: inline-block;
+  font-size: 2.7rem;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 15px;
+}
+
+#timer-label {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#time-left {
+  display: block;
+  margin: 20px;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 button {
   margin: 15px;
+  background-color: black;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  vertical-align: middle;
+}
+
+button:hover {
+  background-color: rgb(71, 71, 71);
+  border-color:rgb(71, 71, 71);
+}
+
+button:active {
+  background-color: rgb(133, 133, 133);
+  border-color: rgb(133, 133, 133);
+}
+
+.length-span {
+  display: inline-block;
+  width: 55px;
+}
+
+#reset, #start_stop {
+  width: 70px;
+  height: 70px;
+}
+
+#start_stop .material-icons {
+  font-size: 27px;
+}
+
+#reset .material-icons{
+  font-size: 38px;
+}
+
+.material-icons {
+  vertical-align: middle;
+  color: white;
 }
 
 .length-wrapper {

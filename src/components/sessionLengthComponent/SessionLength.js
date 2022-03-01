@@ -7,7 +7,9 @@ function SessionLength({ sessionLength, setSessionLength }) {
       <button id="session-decrement" onClick={() => setSessionLength(sessionLength - 1)}>
       <span className="material-icons">remove</span>
       </button>
-      <p id="session-length" className="length">{sessionLength}</p>
+      <span className="length-span">
+        <p id="session-length" className="length">{sessionLength}</p>
+      </span>
       <button id="session-increment" onClick={() => setSessionLength(sessionLength + 1)}>
         <span className="material-icons">add</span>
       </button>
