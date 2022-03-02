@@ -1,9 +1,7 @@
 import './session.css';
 import React, { useState, useEffect } from 'react';
 
-function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength }) {
-
-  const [isPaused, setPlayPause] = useState(true);
+function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, isPaused, setPlayPause }) {
 
   const tick = () => {
     //timer ended
@@ -41,7 +39,7 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength })
           <span className="material-icons">pause</span>
         </button>
         <button id="reset">
-        <span className="material-icons">replay</span>
+        <span className="material-icons" onClick={reset}>replay</span>
         </button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './sessionLength.css';
 
-function SessionLength({ sessionLength, setSessionLength, setTimer }) {
+function SessionLength({ sessionLength, setSessionLength, setTimer, isPaused }) {
 
   const handleSetSessionLength = (e) => {
     if(e.target.className.includes("decrement")) {
@@ -18,13 +18,17 @@ function SessionLength({ sessionLength, setSessionLength, setTimer }) {
   return(
     <div className="length-wrapper">
       <div id="session-label">Session Length</div>
-      <button id="session-decrement" className="decrement" onClick={(e) => handleSetSessionLength(e)}>
+      <button id="session-decrement" className="decrement" 
+      onClick={(e) => handleSetSessionLength(e)}
+      disabled={!isPaused}>
         <span className="material-icons decrement">remove</span>
       </button>
       <span className="length-span">
         <p id="session-length" className="length">{sessionLength}</p>
       </span>
-      <button id="session-increment" className="increment" onClick={() => setSessionLength(sessionLength + 1)}>
+      <button id="session-increment" className="increment" 
+      onClick={(e) => handleSetSessionLength(e)}
+      disabled={!isPaused}>
         <span className="material-icons increment">add</span>
       </button>
     </div>
