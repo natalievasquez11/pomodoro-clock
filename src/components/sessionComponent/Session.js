@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 
 function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength }) {
 
-  // const { minutes = 0, seconds = 0 } = minsSecs;  
-  // const [[mins, secs], setTime] = useState([minutes, seconds]);
   const [isPaused, setPlayPause] = useState(true);
 
   const tick = () => {
@@ -34,7 +32,9 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength })
   return (
     <div className="session-wrapper">
       <p id="timer-label">Session</p>
-      <p id="time-left" className="length">{`${timerMins.toString().padStart(2, '0')}:${timerSecs.toString().padStart(2, '0')}`}</p>
+      <p id="time-left" className="length">
+        {`${timerMins.toString().padStart(2, '0')}:${timerSecs.toString().padStart(2, '0')}`}
+      </p>
       <div>
         <button id="start_stop" onClick={() => setPlayPause(!isPaused)}>
           <span className="material-icons">play_arrow</span>
@@ -44,7 +44,6 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength })
         <span className="material-icons">replay</span>
         </button>
       </div>
-
     </div>
   )
 }

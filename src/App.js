@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <div className="lengths-div">
         <BreakLength breakLength={breakLength} setBreakLength={setBreakLength}/>
-        <SessionLength sessionLength={sessionLength} setSessionLength={setSessionLength}/>
+        <SessionLength sessionLength={sessionLength} setSessionLength={setSessionLength} setTimer={setTimer}/>
       </div>
       <Session timerMins={timerMins} timerSecs={timerSecs} setTimer={setTimer} 
         sessionLength={sessionLength} breakLength={breakLength}/>
