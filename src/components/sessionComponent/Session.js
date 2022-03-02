@@ -1,7 +1,7 @@
 import './session.css';
 import React, { useState, useEffect } from 'react';
 
-function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, isPaused, setPlayPause }) {
+function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, isPaused, setPlayPause, setSessionLength, setBreakLength }) {
 
   const tick = () => {
     //timer ended
@@ -17,6 +17,12 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
   }
 
   const reset = () => setTimer([parseInt(sessionLength), parseInt(0)]);
+
+  const hardReset = () => {
+    setSessionLength(25);
+    setBreakLength(5);
+    setPlayPause(true);
+  }
 
   useEffect(() => {
     const timerId = setInterval(() => {
@@ -39,7 +45,7 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
           <span className="material-icons">pause</span>
         </button>
         <button id="reset">
-        <span className="material-icons" onClick={reset}>replay</span>
+        <span className="material-icons" onClick={hardReset}>replay</span>
         </button>
       </div>
     </div>

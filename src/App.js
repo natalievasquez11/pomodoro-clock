@@ -22,7 +22,8 @@ function App() {
       </div>
       <Session timerMins={timerMins} timerSecs={timerSecs} setTimer={setTimer} 
         sessionLength={sessionLength} breakLength={breakLength} 
-        isPaused={isPaused} setPlayPause={setPlayPause}/>
+        isPaused={isPaused} setPlayPause={setPlayPause}
+        setSessionLength={setSessionLength} setBreakLength={setBreakLength}/>
     </div>
   );
 }

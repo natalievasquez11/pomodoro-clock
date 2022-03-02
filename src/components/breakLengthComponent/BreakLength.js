@@ -7,7 +7,7 @@ function BreakLength({ breakLength, setBreakLength, isPaused }) {
       <div className="inc-dec-wrapper">
         <button id="break-decrement" 
         onClick={() => setBreakLength(breakLength - 1)}
-        disabled={!isPaused}>
+        disabled={!isPaused || breakLength === 0}>
           <span className="material-icons">remove</span>
         </button>
         <span className="length-span">
@@ -15,7 +15,7 @@ function BreakLength({ breakLength, setBreakLength, isPaused }) {
         </span>
         <button id="break-increment" 
         onClick={() => setBreakLength(breakLength + 1)}
-        disabled={!isPaused}>
+        disabled={!isPaused || breakLength === 60}>
           <span className="material-icons">add</span>
         </button>
       </div>
