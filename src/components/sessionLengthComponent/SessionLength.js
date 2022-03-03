@@ -20,7 +20,7 @@ function SessionLength({ sessionLength, setSessionLength, setTimer, isPaused }) 
       <div id="session-label">Session Length</div>
       <button id="session-decrement" className="decrement" 
       onClick={(e) => handleSetSessionLength(e)}
-      disabled={!isPaused || sessionLength === 0}>
+      disabled={!isPaused || sessionLength === 1}>
         <span className="material-icons decrement">remove</span>
       </button>
       <span className="length-span">

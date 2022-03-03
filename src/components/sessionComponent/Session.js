@@ -1,8 +1,7 @@
 import './session.css';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, isPaused, setPlayPause, setSessionLength, setBreakLength }) {
-
   const tick = () => {
     //timer ended
     if(timerMins === 0 && timerSecs === 0) {
@@ -22,6 +21,7 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
     setSessionLength(25);
     setBreakLength(5);
     setPlayPause(true);
+    reset();
   }
 
   useEffect(() => {
@@ -44,8 +44,8 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
           <span className="material-icons">play_arrow</span>
           <span className="material-icons">pause</span>
         </button>
-        <button id="reset">
-        <span className="material-icons" onClick={hardReset}>replay</span>
+        <button id="reset" onClick={hardReset}>
+        <span className="material-icons" >replay</span>
         </button>
       </div>
     </div>

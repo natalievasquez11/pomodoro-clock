@@ -7,7 +7,7 @@ function BreakLength({ breakLength, setBreakLength, isPaused }) {
       <div className="inc-dec-wrapper">
         <button id="break-decrement" 
         onClick={() => setBreakLength(breakLength - 1)}
-        disabled={!isPaused || breakLength === 0}>
+        disabled={!isPaused || breakLength === 1}>
           <span className="material-icons">remove</span>
         </button>
         <span className="length-span">
