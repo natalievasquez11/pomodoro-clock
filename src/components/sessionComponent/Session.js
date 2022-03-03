@@ -1,11 +1,11 @@
 import './session.css';
 import React, { useEffect } from 'react';
 
-function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, isPaused, setPlayPause, setSessionLength, setBreakLength }) {
+function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, isPaused, setPlayPause, setSessionLength, setBreakLength, isInSession, setInSession }) {
   const tick = () => {
     //timer ended
     if(timerMins === 0 && timerSecs === 0) {
-      reset();
+      setInSession(!isInSession);
     //seconds at zero, go to next minute
     } else if(timerSecs === 0) {
       setTimer([timerMins - 1, 59]);
@@ -15,13 +15,19 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
     }
   }
 
-  const reset = () => setTimer([parseInt(sessionLength), parseInt(0)]);
+  const reset = () => {
+    if(isInSession) {
+      setTimer([parseInt(sessionLength), parseInt(0)]);
+    } else {
+      setTimer([parseInt(breakLength), parseInt(0)]);
+    }
+  }
 
   const hardReset = () => {
     setSessionLength(25);
     setBreakLength(5);
     setPlayPause(true);
-    reset();
+    setInSession(true);
   }
 
   useEffect(() => {
@@ -33,9 +39,16 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
     return () => clearInterval(timerId);
   });
 
+  useEffect(() => {
+    reset();
+  }, [isInSession])
+
   return (
     <div className="session-wrapper">
-      <p id="timer-label">Session</p>
+      {isInSession ? 
+        <p id="timer-label">Session In Progress</p> : 
+        <p id="timer-label">Break Time!</p>
+      }
       <p id="time-left" className="length">
         {`${timerMins.toString().padStart(2, '0')}:${timerSecs.toString().padStart(2, '0')}`}
       </p>

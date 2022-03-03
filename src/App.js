@@ -10,7 +10,7 @@ function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [[timerMins, timerSecs], setTimer] = useState([sessionLength, 0]);
   const [isPaused, setPlayPause] = useState(true);
-  // let minsSecs = { minutes: sessionLength, seconds: 0 };
+  const [isInSession, setInSession] = useState(true);
 
   return (
     <div className="App">
@@ -23,7 +23,8 @@ function App() {
       <Session timerMins={timerMins} timerSecs={timerSecs} setTimer={setTimer} 
         sessionLength={sessionLength} breakLength={breakLength} 
         isPaused={isPaused} setPlayPause={setPlayPause}
-        setSessionLength={setSessionLength} setBreakLength={setBreakLength}/>
+        setSessionLength={setSessionLength} setBreakLength={setBreakLength}
+        isInSession={isInSession} setInSession={setInSession}/>
     </div>
   );
 }
