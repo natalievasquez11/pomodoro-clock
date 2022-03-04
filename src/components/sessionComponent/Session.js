@@ -8,22 +8,16 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
   const tick = () => {
     //timer ended
     if(timerMins === 0 && timerSecs === 0) {
-      audio.play();
       setInSession(!isInSession);
     //seconds at zero, go to next minute
     } else if(timerSecs === 0) {
       setTimer([timerMins - 1, 59]);
     //reduce time by one second
+    } else if(timerMins === 0 && timerSecs === 1){
+      audio.play()
+      setTimer([timerMins, timerSecs - 1]);
     } else {
       setTimer([timerMins, timerSecs - 1]);
-    }
-  }
-
-  const reset = () => {
-    if(isInSession) {
-      setTimer([parseInt(sessionLength), parseInt(0)]);
-    } else {
-      setTimer([parseInt(breakLength), parseInt(0)]);
     }
   }
 
@@ -32,6 +26,13 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
     setBreakLength(5);
     setPlayPause(true);
     setInSession(true);
+    audio.pause();
+    audio.currentTime = 0;
+
+    if(sessionLength !== timerMins) {
+      setTimer([parseInt(sessionLength), parseInt(0)]);
+    }
+
   }
 
   useEffect(() => {
@@ -44,8 +45,15 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
   });
 
   useEffect(() => {
+    const reset = () => {
+      if(isInSession) {
+        setTimer([parseInt(sessionLength), parseInt(0)]);
+      } else {
+        setTimer([parseInt(breakLength), parseInt(0)]);
+      }
+    };
     reset();
-  }, [isInSession])
+  }, [isInSession, sessionLength, breakLength, setTimer])
 
   return (
     <div className="session-wrapper">
