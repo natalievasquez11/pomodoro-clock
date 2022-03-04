@@ -1,10 +1,14 @@
 import './session.css';
 import React, { useEffect } from 'react';
+import NotificationBeep from '../../audio/birds-singing.wav';
 
 function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, isPaused, setPlayPause, setSessionLength, setBreakLength, isInSession, setInSession }) {
+  const audio = document.getElementById('beep');
+
   const tick = () => {
     //timer ended
     if(timerMins === 0 && timerSecs === 0) {
+      audio.play();
       setInSession(!isInSession);
     //seconds at zero, go to next minute
     } else if(timerSecs === 0) {
@@ -52,6 +56,7 @@ function Session({ timerMins, timerSecs, setTimer, sessionLength, breakLength, i
       <p id="time-left" className="length">
         {`${timerMins.toString().padStart(2, '0')}:${timerSecs.toString().padStart(2, '0')}`}
       </p>
+      <audio src={NotificationBeep} id="beep"/>
       <div>
         <button id="start_stop" onClick={() => setPlayPause(!isPaused)}>
           <span className="material-icons">play_arrow</span>
