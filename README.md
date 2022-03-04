@@ -11,6 +11,8 @@ A pomodoro clock project from [freecodecamp's frontend certification](https://ww
 
 ![project-img](./src/images/project-img.png)
 
+![project-img2](./src/images/project-img2.png)
+
 ## Freecodecamp's test results
 
 Here is a screenshot of the test results from freecodecamp's test suite

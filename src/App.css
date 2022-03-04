@@ -42,6 +42,10 @@ button:active {
   border-color: rgb(133, 133, 133);
 }
 
+button:focus-visible {
+  border-color: black;
+}
+
 .length-span {
   display: inline-block;
   width: 55px;
