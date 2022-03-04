@@ -4,6 +4,7 @@ import BreakLength from './components/breakLengthComponent/BreakLength';
 import SessionLength from './components/sessionLengthComponent/SessionLength';
 import Session from './components/sessionComponent/Session';
 import React, { useState } from 'react';
+import Confetti from './components/confetti/Confetti';
 
 function App() {
   const [sessionLength, setSessionLength] = useState(25);
@@ -25,6 +26,7 @@ function App() {
         isPaused={isPaused} setPlayPause={setPlayPause}
         setSessionLength={setSessionLength} setBreakLength={setBreakLength}
         isInSession={isInSession} setInSession={setInSession}/>
+      <Confetti timerMins={timerMins} timerSecs={timerSecs} isInSession={isInSession}/>
     </div>
   );
 }
